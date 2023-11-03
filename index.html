@@ -48,10 +48,12 @@
         });
         
         function sendText(text) {
-            liff.sendMessages([{
-                type: "text",
-                text: text
-            }])
+            liff.sendMessages([
+                {
+                    type: "text",
+                    text: text
+                },
+            ])
             liff.then(function (){
                 liff.closeWindow();
             })
@@ -59,9 +61,6 @@
                 window.alert('Failed to send message ' + error);
             });
         }
-        
-        const params = (new URL(document.location)).searchParams;
-        const key = params.get('key');
 
         $(function () {
             $('form').submit(function () {

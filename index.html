@@ -10,7 +10,7 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3">数字</p>
+        <p class="mt-3">name</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
         </div>
@@ -49,8 +49,8 @@
         
         function sendText(text) {
             liff.sendMessages([{
-                'type': 'text',
-                'text': text
+                type: "text",
+                text: text
             }])
             liff.then(function (){
                 liff.closeWindow();

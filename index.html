@@ -9,27 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    <form class="w-75 mx-auto">
-        <p class="mt-3">名前</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
-        </div>
-        <p class="mt-3">腕立て</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="udetate" required>
-        </div>
-        <p class="mt-3">腹筋</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="fukkin" required>
-        </div>
-        <p class="mt-3">背筋</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="haikin" required>
-        </div>
-        <p class="mt-3">スクワット</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="sukuwat" required>
-        </div>
+    <p>ごまのごはん</p>
+    <form action="" class="">
+        <input type="radio" name="food_type" value="チュール" class="" checked>チュール
+        <input type="radio" name="food_type" value="カリカリ" class="">カリカリ
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
     
@@ -60,13 +43,9 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const udetate = $('input[name="udetate"]').val();
-                const fukkin  = $('input[name="fukkin"]').val();
-                const haikin  = $('input[name="haikin"]').val();
-                const sukuwat = $('input[name="sukuwat"]').val();
+                const food = $('input:radio[name="food_type"]:checked').val();
                 
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${food}`;
                 console.log(msg);
                 sendText(msg);
 
